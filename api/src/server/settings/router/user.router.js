@@ -3,15 +3,15 @@ const {validateUser}=require("../middleware/User/ValidateUser.middleware");
 // const createUser = require("../controllers/user/createUser.controller");
 // const allUsers = require("../controllers/user/allUsers.controller");
 
-const registerUser = require("../controllers/user/registerUser.controller");
-const login = require("../controllers/user/login.controller");
-const confimarToken = require("../controllers/user/confimarToken.controller");
-const googleLogin = require("../controllers/user/googleLogin.controller");
-const olvidatePassword = require("../controllers/user/olvidatePassword.controller");
-const comprobarToken = require("../controllers/user/comprobarToken.controller");
-const newPasswordUser = require("../controllers/user/newPasswordUser.controller");
-const getAllUser = require("../controllers/user/getAllUser.controller");
-const getUserById = require("../controllers/user/getUserById.controller");
+const registerUser = require("../controllers/User/registerUser.controller");
+const login = require("../controllers/User/login.controller");
+const confimarToken = require("../controllers/User/confimarToken.controller");
+const googleLogin = require("../controllers/User/googleLogin.controller");
+const olvidatePassword = require("../controllers/User/olvidatePassword.controller");
+const comprobarToken = require("../controllers/User/comprobarToken.controller");
+const newPasswordUser = require("../controllers/User/newPasswordUser.controller");
+const getAllUser = require("../controllers/User/getAllUser.controller");
+const getUserById = require("../controllers/User/getUserById.controller");
 
 const userRouter = Router();
 
