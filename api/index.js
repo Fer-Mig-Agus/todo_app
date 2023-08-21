@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3001;
 baseDeDatos.sync({ force: false }).then(() => {
     server.listen(PORT, () => {
         console.log("server listening on PORT: ", PORT);
+
+        
     })
 })
 
