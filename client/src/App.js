@@ -16,7 +16,8 @@ import { saveUser } from './redux/actions';
 import axios from "axios";
 
 const desarrolloApp = "http://localhost:3001";
-axios.defaults.baseURL = desarrolloApp;
+const produccionApp ="todoapptecno-production.up.railway.app";
+axios.defaults.baseURL = produccionApp;
 
 
 function App() {
