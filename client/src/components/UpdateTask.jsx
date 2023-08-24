@@ -27,7 +27,7 @@ const UpdateTask = ({ id, task, closeWindow }) => {
 		event.preventDefault();
 		if (newTask == '')
 			return displayFailedMessage(
-				'El campo está vacio, nose puede actualizar si no posees nada para cambiar',
+				'The field is empty, you cannot update if you have nothing to change.',
 			);
 		try {
 			const { data } = await axios.put(
@@ -37,7 +37,7 @@ const UpdateTask = ({ id, task, closeWindow }) => {
 				},
 			);
 			displaySuccessMessage(
-				'La tarea se ha actualizado correctamente, precione X para salir',
+				'The task has been updated successfully, press X to exit.',
 			);
 			setChangeOnTasks(!changeOnTasks);
 		} catch (error) {

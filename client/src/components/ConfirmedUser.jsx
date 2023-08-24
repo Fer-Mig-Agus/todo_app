@@ -24,9 +24,9 @@ const ConfirmedUser = () => {
 
 	const displayConfimed = () => {
 		swal({
-			title: 'Cuenta confirmada',
+			title: 'Account confirmed',
 			icon: 'success',
-			text: 'Ahora podés Iniciar Sesion',
+			text: 'Now you can Login',
 			buttons: 'Aceptar',
 		}).then((response) => {
 			if (response) {

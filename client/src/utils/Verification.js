@@ -5,31 +5,31 @@ export const validate = (form, errorState) => {
 
     const error = { ...errorState };
 
-    if (!form.first_name) error.first_name = "Completa el campo";
-    else if (form.first_name === "") error.first_name = "Completa el campo";
-    else if (!isNaN(form.first_name)) error.first_name = "No debe ser un numero";
+    if (!form.first_name) error.first_name = "Complete the field";
+    else if (form.first_name === "") error.first_name = "Complete the field";
+    else if (!isNaN(form.first_name)) error.first_name = "It should not be a number";
     else error.first_name = "";
 
-    if (!form.last_name) error.last_name = "Completa el campo";
-    else if (form.last_name === "") error.last_name = "Completa el campo";
-    else if (!isNaN(form.last_name)) error.last_name = "No debe ser un numero";
+    if (!form.last_name) error.last_name = "Complete the field";
+    else if (form.last_name === "") error.last_name = "Complete the field";
+    else if (!isNaN(form.last_name)) error.last_name = "It should not be a number";
     else error.last_name = "";
 
-    if (!form.email) error.email = "Completa el campo";
-    else if (form.email === "") error.email = "Completa el campo";
-    else if (! /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(form.email)) error.email = "No es un email valido";
-    else if (form.email.length >= 35) error.email = "Supera los caracteres permitidos";
+    if (!form.email) error.email = "Complete the field";
+    else if (form.email === "") error.email = "Complete the field";
+    else if (! /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(form.email)) error.email = "Not a valid email";
+    else if (form.email.length >= 35) error.email = "Exceeds the allowed characters";
     else error.email = "";
 
-    if (!form.password) error.password = "Completa el campo";
-    else if (form.password === "") error.password = "Completa el campo";
+    if (!form.password) error.password = "Complete the field";
+    else if (form.password === "") error.password = "Complete the field";
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{1,}$/;
-    if (!passwordRegex.test(form.password)) error.password = 'La contraseña debe tener al menos una letra mayúscula, una letra minúscula y un número.';
+    if (!passwordRegex.test(form.password)) error.password = 'The password must contain at least one uppercase letter, one lowercase letter and one number.';
     else error.password = "";
 
-    if (!form.repeat_password) error.repeat_password = "Completa el campo";
-    else if (form.repeat_password === "") error.repeat_password = "Completa el campo";
-    else if (form.repeat_password !== form.password) error.repeat_password = "No coninciden las contraseñas";
+    if (!form.repeat_password) error.repeat_password = "Complete the field";
+    else if (form.repeat_password === "") error.repeat_password = "Complete the field";
+    else if (form.repeat_password !== form.password) error.repeat_password = "Passwords do not match";
     else error.repeat_password = "";
 
     return error;

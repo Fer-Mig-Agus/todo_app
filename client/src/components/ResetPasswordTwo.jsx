@@ -64,10 +64,10 @@ const ResetPasswordTwo = () => {
 
 	const displaySuccessReset = (message) => {
 		swal({
-			title: 'Operacion exitosa',
+			title: 'Successful operation',
 			text: message,
 			icon: 'success',
-			buttons: 'Aceptar',
+			buttons: 'Accept',
 		}).then((response) => {
 			if (response) {
 				navigate('/');
@@ -80,11 +80,11 @@ const ResetPasswordTwo = () => {
 		const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{1,}$/;
 		if (!passwordRegex.test(password)) {
 			return displayFailedMessage(
-				'La contraseña no posee la estructura pedida',
+				'The password does not have the requested structure',
 			);
 		}
 		if (password !== confirmPassword) {
-			return displayFailedMessage('Las contraseñas no coinciden');
+			return displayFailedMessage('Passwords do not match');
 		}
 		try {
 			const { data } = await axios.post(`/user/olvidate_password/${token}`, {
@@ -101,7 +101,7 @@ const ResetPasswordTwo = () => {
 		const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{1,}$/;
 		if (!passwordRegex.test(password)) {
 			setPasswordError(
-				'La contraseña debe tener al menos una letra mayúscula, una letra minúscula y un número.',
+				'The password must contain at least one uppercase letter, one lowercase letter and one number.',
 			);
 		} else {
 			setPasswordError('');
@@ -110,7 +110,7 @@ const ResetPasswordTwo = () => {
 
 	const validateConfirmPassword = (confirmPassword) => {
 		if (password !== confirmPassword) {
-			setConfirmError('Las contraseñas no coinciden.');
+			setConfirmError('Passwords do not match.');
 		} else {
 			setConfirmError('');
 		}
@@ -124,7 +124,7 @@ const ResetPasswordTwo = () => {
 					<div className={styles.contentFields}>
 						<input
 							type="text"
-							placeholder="Nueva contraseña..."
+							placeholder="New Password..."
 							onChange={handleChangePassword}
 							value={password}
 							name=""
@@ -135,7 +135,7 @@ const ResetPasswordTwo = () => {
 					<div className={styles.contentFields}>
 						<input
 							type="text"
-							placeholder="Repite la contraseña..."
+							placeholder="Repeat Password..."
 							onChange={handleChangeConfirmPassword}
 							value={confirmPassword}
 						/>
@@ -143,7 +143,7 @@ const ResetPasswordTwo = () => {
 					</div>
 
 					<button className={styles.button} type="submit">
-						Cambiar contraseña
+						Change password
 					</button>
 				</form>
 			</main>

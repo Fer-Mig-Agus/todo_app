@@ -108,7 +108,7 @@ const Login = () => {
 			!form.password ||
 			form.password === ''
 		) {
-			displayFailedMessage('Todos los campos son obligatorios');
+			displayFailedMessage('All fields are required');
 			return;
 		}
 		login(form);

@@ -44,9 +44,9 @@ const ForgetPasswordOne = () => {
 
 	const verificarEmail = (email, stateError) => {
 		let errorFuncion = { ...stateError };
-		if (!email || email === '') errorFuncion = 'Debe completar el campo';
+		if (!email || email === '') errorFuncion = 'You must complete the field';
 		else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(email))
-			errorFuncion = 'No es un email valido';
+			errorFuncion = 'Not a valid email';
 		else errorFuncion = '';
 
 		return errorFuncion;
@@ -55,17 +55,17 @@ const ForgetPasswordOne = () => {
 	const displayCancel = (event) => {
 		event.preventDefault();
 		swal({
-			title: 'ATENCIÓN!',
-			text: 'Desea cancelar la restauracion?',
+			title: 'ATTENTION!',
+			text: 'Do you want to cancel the restoration?',
 			icon: 'warning',
 			buttons: ['NO', 'SI'],
 		}).then((response) => {
 			if (response) {
 				swal({
-					title: 'Restauracion cancelada',
-					text: 'Al cancelar la operacion tu contraseña seguira siendo la misma',
+					title: 'Restoration cancelled',
+					text: 'When you cancel the operation your password will remain the same',
 					icon: 'success',
-					buttons: 'aceptar',
+					buttons: 'Accept',
 				}).then(() => {
 					navigate('/');
 				});
@@ -76,18 +76,18 @@ const ForgetPasswordOne = () => {
 	const buttonSubmit = async (event) => {
 		event.preventDefault();
 		if (!email || email === '')
-			return displayFailedMessage('Debe completar el campo');
+			return displayFailedMessage('You must complete the field');
 		else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(email))
-			return displayFailedMessage('No es un email valido');
+			return displayFailedMessage('Not a valid email');
 
 		try {
 			const { data } = await axios.post(`/user/olvidate_password`, { email });
 
 			swal({
-				title: `Operación completada`,
+				title: `Operation completed`,
 				text: data.message,
 				icon: 'success',
-				buttons: 'Aceptar',
+				buttons: 'Accept',
 			});
 		} catch (error) {
 			console.log(error);
@@ -102,15 +102,15 @@ const ForgetPasswordOne = () => {
 					<div className={styles.contentFields}>
 						<input
 							type="email"
-							placeholder="Email aqui..."
+							placeholder="Email..."
 							onChange={handleChangeEmail}
 							value={email}
 						/>
 						<span>{error}</span>
 					</div>
 					<div className={styles.boxButton}>
-						<button className={styles.button}>Enviar email</button>
-						<button className={styles.button} onClick={displayCancel}>Cancelar</button>
+						<button className={styles.button}>Send email</button>
+						<button className={styles.button} onClick={displayCancel}>Cancel</button>
 					</div>
 				</form>
 			</main>
