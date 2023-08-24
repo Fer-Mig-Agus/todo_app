@@ -27,7 +27,7 @@ const ConfirmedUser = () => {
 			title: 'Account confirmed',
 			icon: 'success',
 			text: 'Now you can Login',
-			buttons: 'Aceptar',
+			buttons: 'Accept',
 		}).then((response) => {
 			if (response) {
 				getConfirmed();

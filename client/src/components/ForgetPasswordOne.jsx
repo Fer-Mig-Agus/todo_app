@@ -58,7 +58,7 @@ const ForgetPasswordOne = () => {
 			title: 'ATTENTION!',
 			text: 'Do you want to cancel the restoration?',
 			icon: 'warning',
-			buttons: ['NO', 'SI'],
+			buttons: ['No', 'Yes'],
 		}).then((response) => {
 			if (response) {
 				swal({
@@ -97,7 +97,7 @@ const ForgetPasswordOne = () => {
 	return (
 		<div className={styles.container}>
 			<main className={styles.content}>
-				<h1 className={styles.title}>Paso 1</h1>
+				<h1 className={styles.title}>Step 1</h1>
 				<form action="" onSubmit={buttonSubmit} className={styles.form}>
 					<div className={styles.contentFields}>
 						<input
@@ -110,7 +110,9 @@ const ForgetPasswordOne = () => {
 					</div>
 					<div className={styles.boxButton}>
 						<button className={styles.button}>Send email</button>
-						<button className={styles.button} onClick={displayCancel}>Cancel</button>
+						<button className={styles.button} onClick={displayCancel}>
+							Cancel
+						</button>
 					</div>
 				</form>
 			</main>

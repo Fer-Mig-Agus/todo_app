@@ -80,7 +80,7 @@ const CardsCompleted = ({ id, task, is_completed }) => {
 					title: 'Canceled',
 					text: 'The operation has been successfully cancelled.',
 					icon: 'success',
-					buttons: 'Aceptar',
+					buttons: 'Accept',
 				});
 			}
 		});

@@ -119,7 +119,7 @@ const ResetPasswordTwo = () => {
 	return (
 		<div className={styles.container}>
 			<main className={styles.content}>
-				<h1 className={styles.title}>Paso 2</h1>
+				<h1 className={styles.title}>Step 2</h1>
 				<form action="" onSubmit={handleResetPassword}>
 					<div className={styles.contentFields}>
 						<input
